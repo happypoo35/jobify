@@ -1,0 +1,20 @@
+.alert {
+  position: absolute;
+  bottom: 0;
+  right: 2rem;
+  padding: 1rem 2rem;
+  border-color: transparent;
+  border-radius: 0.25rem;
+  text-align: center;
+  animation: 4s alert;
+
+  &-danger {
+    color: color(red, 500);
+    background: color(red, 400);
+  }
+
+  &-success {
+    color: color(green, 500);
+    background: color(green, 400);
+  }
+}

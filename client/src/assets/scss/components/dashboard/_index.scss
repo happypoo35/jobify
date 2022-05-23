@@ -1,0 +1,70 @@
+.dashboard {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  height: 100%;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+  }
+
+  @import "sidebar";
+
+  .container {
+    width: 90%;
+  }
+
+  &-header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    min-height: $headerHeight;
+    background: white;
+    z-index: 1;
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .h3 {
+      @include tablet {
+        display: none;
+      }
+    }
+
+    .logo {
+      display: none;
+
+      @include tablet {
+        display: unset;
+
+        img {
+          max-height: 2.75rem;
+        }
+      }
+    }
+  }
+
+  &-main {
+    padding: 2rem 0;
+  }
+
+  &-section {
+    &.profile,
+    &.add-job {
+      background: white;
+      padding: 3rem 2.5rem;
+
+      .form {
+        width: min(25rem, 100%);
+        margin: 0 auto;
+      }
+    }
+
+    @import "all-jobs";
+    @import "stats";
+  }
+}

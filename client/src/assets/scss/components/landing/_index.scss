@@ -1,0 +1,51 @@
+.header-landing {
+  display: flex;
+  align-items: center;
+  min-height: $headerHeight;
+  z-index: 1;
+}
+
+.main-landing {
+  display: flex;
+  align-items: center;
+
+  .content {
+    display: grid;
+    align-items: center;
+    margin-top: -3rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+
+    @include laptop {
+      grid-template-columns: unset;
+      gap: unset;
+      margin-top: unset;
+    }
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .image {
+    @include laptop {
+      display: none;
+    }
+  }
+
+  .h1 {
+    font-weight: 700;
+
+    span {
+      color: color(primary, 500);
+    }
+  }
+
+  p {
+    color: color(gray, 600);
+    max-width: 60ch;
+  }
+}
