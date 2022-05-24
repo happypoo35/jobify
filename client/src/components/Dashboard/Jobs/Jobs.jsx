@@ -14,7 +14,7 @@ const Jobs = () => {
 
   return (
     <section className="dashboard-section all-jobs">
-      <Filters jobsCount={data?.nHits} />
+      <Filters jobsCount={data?.nHits} pageCount={data?.nPages} />
       <section className="jobs-list">
         {isFetching && (
           <div className="loading-cover">

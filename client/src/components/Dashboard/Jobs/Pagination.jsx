@@ -3,7 +3,6 @@ import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 
 import { useDispatch, useSelector } from "react-redux";
 import { selectPage, setPage } from "app/slice.global";
-import { useEffect } from "react";
 
 const Pagination = ({ pageCount }) => {
   const { mobile } = useWindowSize();
@@ -15,12 +14,6 @@ const Pagination = ({ pageCount }) => {
   });
 
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (currentPage > pageCount) {
-      dispatch(setPage(1));
-    }
-  }, [currentPage, pageCount, dispatch]);
 
   const handleNextPage = () => {
     if (currentPage < pageCount) {

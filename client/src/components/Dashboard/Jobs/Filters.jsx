@@ -10,7 +10,7 @@ import { useForm, useWatch } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { selectLimit, selectPage, setLimit, setPage } from "app/slice.global";
 
-const Filters = ({ jobsCount }) => {
+const Filters = ({ jobsCount, pageCount }) => {
   const [searchParams, setSearchParams] = useSearchParams(); //eslint-disable-line
 
   const dispatch = useDispatch();
@@ -53,6 +53,12 @@ const Filters = ({ jobsCount }) => {
 
     setSearchParams(searchValues);
   }, [setSearchParams, values, debouncedSearch, page, limit]);
+
+  useEffect(() => {
+    if (page > pageCount) {
+      dispatch(setPage(1));
+    }
+  }, [page, pageCount, dispatch]);
 
   const handleReset = () => {
     dispatch(setPage(1));
