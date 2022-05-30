@@ -15,7 +15,7 @@ const Jobs = () => {
   return (
     <section className="dashboard-section all-jobs">
       <Filters jobsCount={data?.nHits} pageCount={data?.nPages} />
-      <section className="jobs-list">
+      <section className="jobs-list" role="list">
         {isFetching && (
           <div className="loading-cover">
             <Spinner size="big" />
@@ -24,7 +24,7 @@ const Jobs = () => {
         {isLoading ? (
           <Spinner size="big" />
         ) : (
-          data.jobs.map((el) => <JobCard key={el._id} job={el} />)
+          data?.jobs?.map((el) => <JobCard key={el._id} job={el} />)
         )}
       </section>
       {data?.nPages > 1 && <Pagination pageCount={data.nPages} />}

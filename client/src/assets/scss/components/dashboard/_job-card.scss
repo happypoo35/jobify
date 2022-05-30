@@ -79,7 +79,7 @@
       display: none;
 
       &.active {
-        display: block;
+        display: initial;
         transform-origin: top right;
         animation: 150ms dropdown;
       }

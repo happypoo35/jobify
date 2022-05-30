@@ -13,8 +13,8 @@ const Selector = forwardRef(
 
     return (
       <div
-        className={`field select ${error ? "error" : ""} ${
-          show ? "active" : ""
+        className={`field select${error ? " error" : ""}${
+          show ? " active" : ""
         }`}
         onClick={() => setShow((p) => !p)}
         ref={selectRef}
@@ -22,18 +22,18 @@ const Selector = forwardRef(
         <input
           ref={ref}
           {...field}
-          id={`${props.name}-input`}
+          id={`${field.name}-input`}
           placeholder=" "
         />
-        <label htmlFor={`${props.name}-input`}>{label}</label>
+        <label htmlFor={`${field.name}-input`}>{label}</label>
         <FiChevronDown className="select-arrow" />
         {error && error !== ` ` && <span className="error-msg">{error}</span>}
-        <ul className="select-dropdown">
+        <ul className="select-dropdown" role="listbox">
           {options.map((el, id) => (
             <li
               key={id}
-              className={`select-dropdown-item ${
-                el === field.value ? "active" : ""
+              className={`select-dropdown-item${
+                el === field.value ? " active" : ""
               }`}
               onClick={() => setValue(field.name, el)}
             >

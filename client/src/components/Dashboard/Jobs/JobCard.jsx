@@ -53,10 +53,17 @@ const JobCard = ({ job }) => {
           </div>
         </div>
         <div className="options" ref={optionsRef}>
-          <button className="btn-options" onClick={() => setShow((p) => !p)}>
+          <button
+            className="btn-options"
+            aria-label="toggle-menu"
+            onClick={() => setShow((p) => !p)}
+          >
             <FiMoreVertical />
           </button>
-          <div className={`options-dropdown ${show ? "active" : ""}`}>
+          <div
+            className={`options-dropdown ${show ? "active" : ""}`}
+            role="menu"
+          >
             <span
               onClick={() => navigate(`/dashboard/add-job/${jobId}`)}
               onMouseEnter={() => prefetchJob(jobId)}

@@ -1,13 +1,13 @@
-const useLocale = (args) => {
-  let dateOptions = {
+const useLocale = (props) => {
+  const dateOptions = {
     year: "numeric",
     month: "short",
     day: "numeric",
-    ...args?.options,
+    ...props?.options,
   };
 
   const localeDate = (date) =>
-    new Date(date).toLocaleString(args?.format || "en-EN", dateOptions);
+    new Date(date).toLocaleString(props?.format || "en-EN", dateOptions);
 
   return localeDate;
 };

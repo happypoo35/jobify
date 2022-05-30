@@ -28,7 +28,7 @@ const Filters = ({ jobsCount, pageCount }) => {
     defaultValues,
   });
   const values = useWatch({ control });
-  const debouncedSearch = useDebounce(values.search, 500);
+  const debouncedSearch = useDebounce(values.search);
 
   useEffect(() => {
     const { search, ...rest } = values;
