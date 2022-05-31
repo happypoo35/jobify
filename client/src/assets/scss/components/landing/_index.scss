@@ -31,6 +31,15 @@
   }
 
   .image {
+    opacity: 0;
+    transform: translateX(2rem);
+    transition: 0.3s;
+
+    &.loaded {
+      transform: unset;
+      opacity: 1;
+    }
+
     @include laptop {
       display: none;
     }

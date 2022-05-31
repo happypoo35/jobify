@@ -24,7 +24,12 @@ const Landing = () => {
               Get started
             </Link>
           </div>
-          <img src={heroImg} alt="job hunt" className="image" />
+          <img
+            src={heroImg}
+            alt="job hunt"
+            className="image"
+            onLoad={(e) => e.target.classList.add("loaded")}
+          />
         </section>
       </main>
     </>
