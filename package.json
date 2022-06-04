@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "cd client && npm run build",
-    "install": "cd client && npm install",
+    "install": "cd client && npm install --force",
     "heroku-postbuild": "npm run install && npm run build",
     "server": "nodemon server --ignore client",
     "client": "npm start --prefix client",
