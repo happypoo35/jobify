@@ -27,6 +27,7 @@ const Filters = ({ jobsCount, pageCount }) => {
   const { register, control, setValue, reset } = useForm({
     defaultValues,
   });
+
   const values = useWatch({ control });
   const debouncedSearch = useDebounce(values.search);
 
